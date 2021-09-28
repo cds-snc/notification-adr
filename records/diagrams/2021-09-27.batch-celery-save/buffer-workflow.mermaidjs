@@ -1,4 +1,5 @@
 flowchart TB
+
     Input[/Notification/] -->|&nbsp send &nbsp| PN[post_notification]
     PN --> |&nbsp OK Status &nbsp| Output[/Response/]
     %% PN --> |&nbsp queue database-tasks &nbsp| SE[[save_email]]
@@ -7,14 +8,22 @@ flowchart TB
     HB[[HeartBeat]] --o |&nbsp pulse &nbsp| NBQ
     HB --> |&nbsp notifications batch &nbsp| BSE[[bulk_save_email]]
     BSE --> |&nbsp send-email-tasks queue &nbsp| DE[[deliver_email]]
-    BSE --> |&nbsp queue send-sms-tasks &nbsp| DS[[deliver_sms]]
-    BSE --> |&nbsp queue send-throttled-sms-tasks &nbsp| DTS[[deliver_throttled_sms]]
+    BSE --> |&nbsp send-sms-tasks queue &nbsp| DS[[deliver_sms]]
+    BSE --> |&nbsp send-throttled-sms-tasks queue &nbsp| DTS[[deliver_throttled_sms]]
     DE -.-> F{Failure}
     DS -.-> F{Failure}
     DTS -.-> F{Failure}
-    F --> |&nbsp queue retry &nbsp| RDE[[deliver_email]]
-    F --> |&nbsp queue retry &nbsp| RDS[[deliver_sms]]
-    F --> |&nbsp queue retry &nbsp| RDTS[[deliver_throttled_sms]]
+    F --> |&nbsp retry queue &nbsp| RDE[[deliver_email]]
+    F --> |&nbsp retry queue &nbsp| RDS[[deliver_sms]]
+    F --> |&nbsp retry queue &nbsp| RDTS[[deliver_throttled_sms]]
     RDE -.-> F
     RDS -.-> F
     RDTS -.-> F
+
+subgraph Legend
+    P[Process]
+    CT[[Celery Task]]
+    IO[/Input / Output/]
+    DBC[(Database / Cache)]
+    D{Decision}
+end
