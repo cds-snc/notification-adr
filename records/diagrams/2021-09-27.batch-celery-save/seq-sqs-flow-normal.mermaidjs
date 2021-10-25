@@ -1,0 +1,14 @@
+sequenceDiagram
+    autonumber
+    participant I as SQS Inbox
+    participant H as Heartbeat
+    participant BW as Bulk Save Workers
+    participant DB as Database
+    H-->>+I: Checks for notifications (1 sec)
+    H->>BW: Kicks off workers
+    BW->>+I: Retrieves batch save of 10 notifications
+    I->>+BW: Gets 10 notifications
+    BW-->>+I: Automatically marks batch as in-flight
+    BW-->>+DB: Saves batches
+    BW->>+I: Deletes the batch of 10 notifications
+    H-->>+I: Checks for notifications...

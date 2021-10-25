@@ -1,0 +1,18 @@
+sequenceDiagram
+    autonumber
+    participant I as Redis Inbox
+    participant IF as Redis In-Flight
+    participant H as Heartbeat
+    participant BW as Bulk Save Workers
+    participant DB as Database
+    H-->>+I: Checks for notifications (1 sec)
+    H->>BW: Kicks off workers
+    BW->>+I: Retrieves batch of many notifications via LMOVE
+    I->>+IF: Atomically moves and return<br/> notifications as in-flight
+    IF->>+BW: Gets many notifications
+    BW-->>+DB: Saves batches
+    DB-->>+BW: Random Failure
+    BW->>+BW: Logs failure
+    H->>+IF: Moves notifications older <br/>than 5 minutes back into Inbox
+    IF->>+I: Failed notifications <br/> returned to Inbox
+    H-->>+I: Checks for notifications...
