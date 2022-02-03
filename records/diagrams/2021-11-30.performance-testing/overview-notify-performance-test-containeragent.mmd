@@ -1,0 +1,13 @@
+graph LR
+    subgraph AWS
+        EB[EventBridge Cron Scheduler] -->|triggers| ECS(ECS Task)
+        subgraph Fargate Cluster
+        ECS-->LT(Locust Tests)
+        end
+        ECR[Docker image in ECR]-->ECS
+        ECS-->S3[S3 Staging Bucket]
+    end
+    subgraph Github
+        WF[Workflow Script]-->S3
+        WF-->REPO[notification-performance-test-results repository]
+    end
