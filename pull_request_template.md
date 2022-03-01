@@ -3,45 +3,15 @@
 > 1-3 sentence description of the changed you're proposing, including a link to
 > a GitHub Issue # or Trello card if applicable.
 
----
-
 > Description en 1 à 3 phrases de la modification proposée, avec un lien vers le
 > problème (« issue ») GitHub ou la fiche Trello, le cas échéant.
 
-# Test instructions | Instructions pour tester la modification
-
-> Sequential steps (1., 2., 3., ...) that describe how to test this change. This
-> will help a developer test things out without too much detective work. Also,
-> include any environmental setup steps that aren't in the normal README steps
-> and/or any time-based elements that this requires.
-
 ---
 
-> Étapes consécutives (1., 2., 3., …) qui décrivent la façon de tester la
-> modification. Elles aideront les développeurs à faire des tests sans avoir à
-> jouer au détective. Veuillez aussi inclure toutes les étapes de configuration
-> de l’environnement qui ne font pas partie des étapes normales dans le fichier
-> README et tout élément temporel requis.
+# Security Assessment Check | Contrôle de l'évaluation de la sécurité
 
-# Help requested | Aide requise
+> Does this introduce any security concerns? | Est-ce que ça introduit des préoccupations liées à la sécurité?
 
-> Things that you (the submitter) want reviewers to pay very close attention to
-> when they review this.
-
----
-
-> Éléments auxquels vous (le demandeur) souhaitez que les réviseurs prêtent
-> attention lorsqu’ils examineront votre demande.
-
-# Unresolved questions / Out of scope | Questions non résolues ou hors sujet
-
-> Are there any related issues or tangent features you consider out of scope for
-> this issue that could be addressed in the future?
-
----
-
-> Y a-t-il des questions connexes que vous considérez hors sujet et qui
-> pourraient être abordées plus tard?
 
 # Reviewer checklist | Liste de vérification du réviseur
 
@@ -66,8 +36,6 @@ que les réviseurs pourraient poser pendant leur examen :
       requests ») afin de réduire le risque lié aux modifications?
 - [ ] Does this change the privacy policy? | Est-ce que ça entraîne une
       modification de la politique de confidentialité?
-- [ ] Does this introduce any security concerns? | Est-ce que ça introduit des
-      préoccupations liées à la sécurité?
 - [ ] Does this significantly alter performance? | Est-ce que ça modifie de
       façon importante la performance?
 - [ ] What is the risk level of using added dependencies? | Quel est le degré de
