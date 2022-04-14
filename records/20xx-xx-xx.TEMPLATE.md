@@ -6,6 +6,8 @@ Date: 20xx-xx-xx
 
 **DRAFT**.
 
+_VALUES: (DRAFT, IN REVIEW, APPROVED, REJECTED)_
+
 ## Context
 
 _TODO: Describe context that triggered the writing of this ADR._
