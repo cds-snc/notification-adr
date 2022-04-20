@@ -20,6 +20,10 @@ _TODO: Describe the different options we have._
 
 _TODO: Describe an option._
 
+## Additional considerations
+
+_TODO: Describe extras in here._
+
 ## Decision
 
 _TODO: Describe the way forward._
