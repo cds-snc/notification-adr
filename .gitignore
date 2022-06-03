@@ -1,0 +1,12 @@
+# Misc
+.DS_Store
+.Rproj.user
+.vscode
+
+# Jupyter
+.ipynb_checkpoints
+
+.env
+.env_*
+__pycache__
+.pytest_cache
