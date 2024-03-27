@@ -6,7 +6,11 @@ Date: 20xx-xx-xx
 
 **DRAFT**.
 
-_VALUES: (DRAFT, IN REVIEW, APPROVED, REJECTED)_
+_VALUES: (DRAFT, IN REVIEW, APPROVED, REJECTED)_.
+
+## Related ADRs
+
+_TODO: Related ADRs that this ADR is built upon or that this one extends._
 
 ## Context
 
